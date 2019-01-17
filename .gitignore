@@ -107,3 +107,4 @@ venv.bak/
 # Spinzed's stuff
 first-little-website.code-workspace
 .vscode/
+test/
