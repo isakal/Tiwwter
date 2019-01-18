@@ -1,0 +1,19 @@
+.videofrm
+{
+    height:500px;
+    width:820px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.text1
+{
+    background-color: #a9e663;
+    text-align: justify;
+}
+.expand
+{
+    height: 100%;
+    width: 100%;
+    align-content: center;
+}
