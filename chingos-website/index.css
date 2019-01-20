@@ -1,19 +1,48 @@
 .videofrm
 {
-    height:500px;
-    width:820px;
+    height: 500px;
+    width: 820px;
     margin-left: auto;
     margin-right: auto;
-
-}
-.text1
-{
-    background-color: #a9e663;
-    text-align: justify;
 }
 .expand
 {
     height: 100%;
     width: 100%;
     align-content: center;
+}
+.title1
+{
+    width: 100%;
+    height: 120px;
+    font-size: 32px;
+    color: #8bd4eb;
+    font-weight: bold;
+    text-align: center;
+    align-content: center;
+}
+.streamtitlecont
+{
+    width: 500px;
+    text-align: center;
+    margin: auto;
+    padding-top: 35px;
+}
+.title2
+{
+    height: 90px;
+    /*padding-right: 1200px;*/
+    padding-top: 45px;
+    font-size: 30px;
+    color: #8bd4eb;
+    font-weight: bold;
+    text-align: center;
+}
+.clips
+{
+    height: 300px;
+    width: 1800px;
+    margin: auto; 
+    text-align: center;
+    display: flex;
 }
