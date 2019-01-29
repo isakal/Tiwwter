@@ -13,13 +13,9 @@ Back end has been developed with Python - Flask
 Besides the Python interpreter, Flask module for Python is required for running this project. Install it via running the following command in terminal:
 ```
 pip install flask
-```
 
-```
 pip install WTForms
-```
 
-```
 pip install flask-sqlalchemy
 ```
 
