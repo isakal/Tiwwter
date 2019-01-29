@@ -2,11 +2,11 @@
 This is a test website built using Flask (Python)
 
 ## Front End
-Front end has been developed using HTML, CSS and JavaScript
+Front end has been developed using HTML, CSS and JavaScript  
 **Front End Lead Developer:** Spinzed           [GitHub Page](https://github.com/spinzed)
 
 ## Back End
-Back end has been developed with Python - Flask
+Back end has been developed with Python - Flask  
 **Back End Lead Developer:** Saki               [GitHub Page](https://github.com/isakal)
 
 ## Additional notes
