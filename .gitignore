@@ -105,6 +105,6 @@ venv.bak/
 .mypy_cache/
 
 # Spinzed's stuff
-first-little-website.code-workspace
+*.code-workspace
 .vscode/
 test/
