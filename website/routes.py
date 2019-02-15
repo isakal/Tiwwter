@@ -62,6 +62,6 @@ def login():
 			flash('Login Unsuccessful. Please check username and password', 'danger')
 	return render_template('login.html', title='Login', form=form)
 @app.route("/logout")
-def logout():a
+def logout():
 	logout_user()
 	return redirect(url_for('home'))
