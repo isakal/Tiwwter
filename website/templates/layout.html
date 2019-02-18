@@ -57,6 +57,7 @@
                 {% endwith %}
                 {% block content %}{% endblock %}
             </div>
+            {% if current_user.is_authenticated %}
             <div class="col-md-4">
                 <div class="content-section">
                     <h3>Complete Bullshit</h3>
@@ -69,6 +70,7 @@
                     </p>
                 </div>
             </div>
+            {% endif %}
         </div>
     </main>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
