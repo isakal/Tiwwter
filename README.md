@@ -17,6 +17,10 @@ pip install flask
 pip install WTForms
 
 pip install flask-sqlalchemy
+
+pip install flask_login
+
+pip install flask_bcrypt
 ```
 
 **For any additional questions, contact any of above mentioned developers.**
