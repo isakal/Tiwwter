@@ -4,7 +4,10 @@
     <div class="media">
         <img class="rounded-circle account-img" src="{{ image_file }}">
         <div class="media-body">
-            <h2 class="account-heading">{{ current_user.username }}</h2>
+            <div>
+                <h2 class="account-heading" style="display: inline-block">{{ current_user.username }}</h2>
+                <input class="btn btn-outline-info" style="margin-top: 10px;float: right;vertical-align: top;" id="" name="" type="submit" value="Edit">
+            </div>
             <p class="text-secondary">{{ current_user.email }}</p>
         </div>
     </div>
