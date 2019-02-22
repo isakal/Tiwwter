@@ -1,6 +1,6 @@
 from flask import render_template, url_for, flash, redirect, request
 from website import app, db, bcrypt
-from website.forms import RegistrationForm, LoginForm
+from website.forms import RegistrationForm, LoginForm, UpdateProfile
 from website.models import User, Post
 from flask_login import login_user, current_user, logout_user,login_required
 
@@ -62,13 +62,32 @@ def login():
 		else:
 			flash('Login Unsuccessful. Please check username and password', 'danger')
 	return render_template('login.html', title='Login', form=form)
+
+
 @app.route("/logout")
 def logout():
 	logout_user()
 	return redirect(url_for('home'))
 
+
+@app.route("/account/")
 @app.route("/account")
 @login_required
 def account():
 	image_file = url_for('static',filename='profile_pics/{}'.format(current_user.image_file))
 	return render_template('account.html',title='Your account',image_file=image_file)
+
+
+@app.route("/account/edit/", methods=['GET', 'POST'])
+@app.route("/account/edit", methods=['GET', 'POST'])
+@login_required
+def edit_profile():
+	form = UpdateProfile()
+	image_file = url_for('static',filename='profile_pics/{}'.format(current_user.image_file))
+	return render_template('edit_profile.html',title='Your account',image_file=image_file,form=form)
+
+
+
+@app.errorhandler(404)
+def page_not_found(error):
+	return render_template('page_not_found.html'), 404
