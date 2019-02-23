@@ -6,7 +6,12 @@
         <div class="media-body">
             <div>
                 <h2 class="account-heading" style="display: inline-block">{{ current_user.username }}</h2>
-                <input class="btn btn-outline-info" style="margin-top: 10px;float: right;vertical-align: top;" id="" name="" type="submit" value="Edit">
+                <a href="{{ url_for("edit_profile") }}" id="edit" class="btn btn-outline-info" onclick="removeButton.call(this)" role="button" style="margin-top: 10px;float: right;vertical-align: top;">Edit</a>
+                <script>
+                    function removeButton() {
+                        this.setAttribute("style", "display:none");
+                    }
+                </script>
             </div>
             <p class="text-secondary">{{ current_user.email }}</p>
         </div>
