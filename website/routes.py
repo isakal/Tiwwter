@@ -1,3 +1,6 @@
+import secrets
+import os
+from PIL import Image
 from flask import render_template, url_for, flash, redirect, request
 from website import app, db, bcrypt
 from website.forms import RegistrationForm, LoginForm, UpdateProfile
@@ -23,7 +26,6 @@ posts = [
 
 
 @app.route("/")
-@app.route("/home")
 def home():
     return render_template('home.html', posts=posts)
 
@@ -78,12 +80,29 @@ def account():
     return render_template('account.html',title='Your account',image_file=image_file)
 
 
+def save_picture(form_picture):
+    random_hex = secrets.token_hex(8)
+    _, f_ext = os.path.splitext(form_picture.filename)
+    picture_fname = random_hex + f_ext
+    picture_path = os.path.join(app.root_path, 'static/profile_pics', picture_fname)
+    output_size = (125,125)
+
+    image = Image.open(form_picture)
+    image.thumbnail(output_size)
+    image.save(picture_path)
+    
+    return picture_fname
+
+
 @app.route("/account/edit/", methods=['GET', 'POST'])
 @app.route("/account/edit", methods=['GET', 'POST'])
 @login_required
 def edit_profile():
     form = UpdateProfile()
     if form.validate_on_submit():
+        if form.profile_pic.data:
+            picture_file = save_picture(form.profile_pic.data)
+            current_user.image_file = picture_file
         current_user.username = form.username.data
         current_user.email = form.email.data
         db.session.commit()

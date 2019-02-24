@@ -1,4 +1,5 @@
 from flask_wtf import FlaskForm,RecaptchaField
+from flask_wtf.file import FileField, FileAllowed
 from flask_login import current_user
 from wtforms import StringField, PasswordField, SubmitField, BooleanField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
@@ -41,6 +42,7 @@ class UpdateProfile(FlaskForm):
                         validators=[DataRequired(), Email()])
     submit = SubmitField('Update')
     recaptcha= RecaptchaField()
+    profile_pic = FileField('Update profile picture',validators=[FileAllowed(['jpg','png'])])
     def validate_username(self,username):
         if username.data != current_user.username:
             user=User.query.filter_by(username=username.data).first()
