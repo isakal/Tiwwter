@@ -39,6 +39,8 @@ class UpdateProfile(FlaskForm):
                            validators=[DataRequired(), Length(min=2, max=20)])
     email = StringField('Email',
                         validators=[DataRequired(), Email()])
+    submit = SubmitField('Update')
+    recaptcha= RecaptchaField()
     def validate_username(self,username):
         if username.data != current_user.username:
             user=User.query.filter_by(username=username.data).first()
