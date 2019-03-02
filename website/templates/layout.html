@@ -58,7 +58,8 @@
                 {% block content %}{% endblock %}
             </div>
             {% if current_user.is_authenticated %}
-            <div class="col-md-4">
+            {% if disable_sidebar %}
+            <div class="col-md-4" id="sidebar">
                 <div class="content-section">
                     <h3>Complete Bullshit</h3>
                     <p class='text-muted'>
@@ -70,6 +71,7 @@
                     </p>
                 </div>
             </div>
+            {% endif %}
             {% endif %}
         </div>
     </main>

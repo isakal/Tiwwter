@@ -55,5 +55,9 @@
         <a href="{{ url_for("account") }}" id="edit" class=" btn btn-outline-secondary" role="button" style="margin-left: 10px;">Cancel</a>
     </div>
 </form>
+<script>
+    var sidebar = document.all.getElementById("sidebar");
+    sidebar.setAttribute("style", "display: none");
+</script>
 
 {% endblock form %}

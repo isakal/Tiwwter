@@ -45,7 +45,7 @@ def register():
         user = User(username=form.username.data, email=form.email.data, password=hashed_password)
         db.session.add(user)
         db.session.commit()
-        flash('Your account has been created. Please login.','success')
+        flash('Your account has been created. ','success')
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
 
@@ -77,7 +77,7 @@ def logout():
 @login_required
 def account():
     image_file = url_for('static',filename='profile_pics/{}'.format(current_user.image_file))
-    return render_template('account.html',title='Your account',image_file=image_file)
+    return render_template('account.html',title='Your account',disable_sidebar=False,image_file=image_file)
 
 
 def save_picture(form_picture):
@@ -90,7 +90,7 @@ def save_picture(form_picture):
     image = Image.open(form_picture)
     image.thumbnail(output_size)
     image.save(picture_path)
-    
+
     return picture_fname
 
 
