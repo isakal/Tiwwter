@@ -21,6 +21,8 @@ pip install flask-sqlalchemy
 pip install flask_login
 
 pip install flask_bcrypt
+
+pip install pillow
 ```
 
 **For any additional questions, contact any of above mentioned developers.**
