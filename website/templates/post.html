@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for("static", filename="css/post.css") }}">
 <article class="media content-section">
     <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/'+ post.author.image_file) }}">
     <div class="media-body">
@@ -7,9 +8,19 @@
             <a class="mr-2" href="#">{{ post.author.username }}</a>
             <small class="text-muted">{{ post.date_posted.strftime('%d-%m-%Y') }}</small>
             {% if post.author == current_user %}
-            <div>
+            <div id="selectDiv">
+                <div id="dotdiv" onclick="showOptions()">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot lastdot"></span>
+                </div>
+            </div>
+            <div id="options" style="display: none">
                 <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('update_post', post_id=post.id) }}">Update</a>
                 <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                <div class="closeButton">
+                    <a class="btn btn-secondary btn-sm mt-1 mb-1" onclick="hideOptions()">Close</a>
+                </div>
                 {% endif %}
             </div>
             <h2 class="article-title">{{ post.title }}</h2>
@@ -35,4 +46,5 @@
         </div>
     </div>
 </div>
+<script src="{{ url_for("static", filename="js/post.js") }}"></script>
 {% endblock content %}
