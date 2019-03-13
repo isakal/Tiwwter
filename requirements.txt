@@ -3,4 +3,5 @@ WTForms
 flask
 flask_login
 flask_bcrypt
+flask_wtforms
 flask_sqlalchemy
