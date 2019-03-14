@@ -150,3 +150,8 @@ def delete_post(post_id):
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('page_not_found.html'), 404
+
+
+@app.errorhandler(403)
+def access_denied(error):
+    return render_template('access_denied.html'), 403
