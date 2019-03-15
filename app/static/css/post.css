@@ -1,17 +1,18 @@
 #selectDiv {
-    width: 100%;
-    height: 39px;
+    width: 80%;
+    height: 10px;
+    margin-top: 10px;
     text-align: right;
 }
 #dotdiv {
     display: inline-block;
+    position: absolute;
     height: 35px;
     width: 35px;
     background: transparent;
-    right: 0;
+    right: 45px;
+    top: 28px;
     transition: 0.15s;
-    margin-top: 10px;
-    margin-right: 5px;
     text-align: center;
 }
 #dotdiv:hover {
@@ -24,8 +25,8 @@
     position: absolute;
     width: 100px;
     height: 0px;
-    top: 80px;
-    right: 40px;
+    top: 63px;
+    right: 45px;
 }
 .dot {
     display: inline-block;
@@ -41,7 +42,6 @@
     right: 0px;
 }
 .custombtn {
-    padding: 0px;
     width: 100px;
     height: 0px;
     transition: 0.2s;
@@ -50,8 +50,10 @@
     background-color: #cacaca;
     border: 0px;
     padding: 0px;
+    margin-right: 10px;
     line-height: 30px;
     overflow: hidden;
+    color: black;
 }
 #updt:hover {
     background-color: #8a8a8a;
@@ -65,4 +67,7 @@
 }
 .display {
     display: block;
+}
+.borderline {
+    border-top: 1px solid #e3e3e3;
 }

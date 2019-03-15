@@ -7,12 +7,17 @@ function showOptions() {
 window.onclick = function (event) {
     const updt = document.getElementById("updt");
     const dlt = document.getElementById("dlt");
-    if(!event.target.classList.contains("show")) {
-        if(updt.classList.contains('trueHeight')) {
+    if(event.target.classList.contains("show")) {
+        if (updt.classList.contains('trueHeight') && dlt.classList.contains('trueHeight')) {
             updt.classList.remove('trueHeight');
-        }
-        if(dlt.classList.contains('trueHeight')) {
             dlt.classList.remove('trueHeight');
         }
+        else {
+            showOptions();
+        }
+    }
+    else {
+        updt.classList.remove('trueHeight');
+        dlt.classList.remove('trueHeight');
     }
 }
