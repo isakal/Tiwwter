@@ -5,35 +5,64 @@
 }
 #dotdiv {
     display: inline-block;
-    height: 20px;
+    height: 35px;
     width: 35px;
     background: transparent;
     right: 0;
     transition: 0.15s;
     margin-top: 10px;
     margin-right: 5px;
+    text-align: center;
 }
 #dotdiv:hover {
     background-color: #ccccd3;
     border-radius: 5px;
     transition: 0.2s;
 }
-#options {
-    position: relative;
+.optns {
+    display: inline-block;
+    position: absolute;
+    width: 100px;
+    height: 0px;
+    top: 80px;
+    right: 40px;
 }
 .dot {
     display: inline-block;
     width: 6px;
     height: 6px;
     border-radius: 5px;
-    margin-bottom: 5px;
+    margin-top: 15px;
     background-color: #8888ce;
-}
-.lastdot {
-    margin-right: 4.5px;
 }
 .closeButton {
     display: inline-block;
     position: absolute;
     right: 0px;
+}
+.custombtn {
+    padding: 0px;
+    width: 100px;
+    height: 0px;
+    transition: 0.2s;
+    display: block;
+    border-radius: 0px;
+    background-color: #cacaca;
+    border: 0px;
+    padding: 0px;
+    line-height: 30px;
+    overflow: hidden;
+}
+#updt:hover {
+    background-color: #8a8a8a;
+    color: white;
+}
+.trueHeight {
+    height: 30px;
+}
+.show {
+    cursor: pointer;
+}
+.display {
+    display: block;
 }
