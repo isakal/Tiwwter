@@ -10,7 +10,7 @@ Back end has been developed with Python - Flask
 **Back End Lead Developer:** [Saki](https://github.com/isakal)
 
 ## Additional notes
-Besides the Python interpreter, Flask module for Pythonand ReCapthca keys are required for running this project. Install it via running the following command in terminal:
+Besides the Python interpreter, Flask module for Python and ReCapthca keys are required for running this project. Install it via running the following command in terminal:
 ```
 pip install -r requirements.txt
 python run.py
