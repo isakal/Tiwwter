@@ -1,5 +1,4 @@
 pillow
-WTForms
 flask
 flask_login
 flask_bcrypt

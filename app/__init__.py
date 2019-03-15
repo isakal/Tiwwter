@@ -1,13 +1,18 @@
+import sys
 import json
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
+from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
 
 def getJSON(filename):
-    with open(filename,'r') as fp:
-        return json.load(fp)
+    try:
+        with open(filename,'r') as fp:
+            return json.load(fp)
+    except FileNotFoundError:
+        print("Couldn't find key, exiting the program...")
+        sys.exit(1)
 
 
 keys = getJSON("keys.json")

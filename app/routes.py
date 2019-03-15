@@ -107,7 +107,7 @@ def new_post():
         db.session.commit()
         flash('Your post has been created!','success')
         return redirect(url_for('home'))
-    return render_template('create_post.html', title='New Post', form=form, legend='Update Post')
+    return render_template('create_post.html', title='New Post', form=form, legend='Update Post', editing=False)
 
 
 @app.route("/post/<int:post_id>")
@@ -132,7 +132,7 @@ def update_post(post_id):
     elif request.method == 'GET':
         form.title.data = post.title
         form.content.data = post.content
-    return render_template('create_post.html', title='Update Post', form=form, legend='Update Post',post=post)
+    return render_template('create_post.html', title='Update Post', form=form, legend='Update Post',post=post, editing=True)
 
 
 @login_required
