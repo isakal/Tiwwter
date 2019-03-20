@@ -2,6 +2,7 @@ flask
 pillow
 WTForms
 flask_wtf
+flask-mail
 flask_login
 flask_bcrypt
 flask_sqlalchemy
