@@ -43,7 +43,7 @@ class UpdateProfileForm(FlaskForm):
     submit = SubmitField('Update')
     recaptcha= RecaptchaField()
     profile_pic = FileField('Update profile picture',validators=[FileAllowed(['jpg','png'])])
-    
+
     def validate_username(self,username):
         if username.data != current_user.username:
             user=User.query.filter_by(username=username.data).first()
@@ -63,7 +63,7 @@ class PostForm(FlaskForm):
     submit = SubmitField('Post')
 
 
-class RequestResetForm(FlaskForm):        
+class RequestResetForm(FlaskForm):
     email = StringField('Email',
     validators=[DataRequired(), Email()])
     submit = SubmitField('Request Password Reset')
@@ -76,9 +76,6 @@ class RequestResetForm(FlaskForm):
 
 class ResetPasswordForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired()])
-    confirm_password = PasswordField('Confirm Password', 
+    confirm_password = PasswordField('Confirm Password',
         validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Reset Password')
-
-        
-

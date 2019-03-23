@@ -112,3 +112,6 @@ test/
 
 #app and reCaptcha keys
 keys.json
+
+#empty database
+site.db
