@@ -1,4 +1,5 @@
 flask
+safrs
 pillow
 WTForms
 flask_wtf
