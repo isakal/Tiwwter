@@ -52,7 +52,7 @@
     </div>
     <div class="form-group" style="position: relative;right: 0;bottom: 0;">
         {{ form.submit(class="btn btn-outline-info") }}
-        <a href="{{ url_for("account") }}" id="edit" class=" btn btn-outline-secondary" role="button" style="margin-left: 10px;">Cancel</a>
+        <a href="{{ url_for("user_posts", username=current_user.username) }}" id="edit" class=" btn btn-outline-secondary" role="button" style="margin-left: 10px;">Cancel</a>
     </div>
 </form>
 <script>

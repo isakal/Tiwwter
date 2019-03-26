@@ -58,13 +58,6 @@ def logout():
     return redirect(url_for('home'))
 
 
-@app.route("/account")
-@login_required
-def account():
-    image_file = url_for('static',filename='profile_pics/{}'.format(current_user.image_file))
-    return render_template('account.html',title='Your account',disable_sidebar=False,image_file=image_file)
-
-
 def save_picture(form_picture):
     random_hex = secrets.token_hex(8)
     _, f_ext = os.path.splitext(form_picture.filename)
@@ -97,7 +90,7 @@ def edit_profile():
         form.email.data = current_user.email
     image_file = url_for('static',filename='profile_pics/{}'.format(current_user.image_file))
     return render_template('edit_profile.html',title='Your account',image_file=image_file,form=form)
-
+    #TODO: need to restyle it and remove/account/edit
 
 @login_required
 @app.route("/post/new", methods=['GET', 'POST'])
@@ -171,7 +164,7 @@ def send_reset_email(user):
     token = user.get_reset_token()
     msg = Message('Password Reset Request', sender=MAIL_EMAIL,
      recipients=[user.email])
-    msg.body = f''' To reset your password, visit the following link : 
+    msg.body = f''' To reset your password, visit the following link :
 {url_for('reset_token', token=token, _external=True)}
 
 If you did not make this request, simply ignore this email and no changes will be made.
