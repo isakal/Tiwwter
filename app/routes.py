@@ -152,7 +152,7 @@ def access_denied(error):
     return render_template('access_denied.html'), 403
 
 
-@app.route("/user/<string:username>")
+@app.route("/user/<string:username>", methods=['GET', 'POST'])
 def user_posts(username):
     page = request.args.get('page', 1, type=int)
     user = User.query.filter_by(username=username).first_or_404()
