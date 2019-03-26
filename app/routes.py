@@ -170,7 +170,7 @@ def user_posts(username):
     elif request.method == 'GET':
         form.username.data = current_user.username
         form.email.data = current_user.email
-    return render_template('user_posts.html', posts=posts, user=user)
+    return render_template('user_posts.html', posts=posts, user=user, form=form)
 
 
 def send_reset_email(user):
