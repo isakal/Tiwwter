@@ -72,26 +72,6 @@ def save_picture(form_picture):
     return picture_fname
 
 
-@app.route("/account/edit", methods=['GET', 'POST'])
-@login_required
-def edit_profile():
-    form = UpdateProfileForm()
-    if form.validate_on_submit():
-        if form.profile_pic.data:
-            picture_file = save_picture(form.profile_pic.data)
-            current_user.image_file = picture_file
-        current_user.username = form.username.data
-        current_user.email = form.email.data
-        db.session.commit()
-        flash('Your account has been successfully updated !','success')
-        return redirect(url_for('account'))
-    elif request.method == 'GET':
-        form.username.data = current_user.username
-        form.email.data = current_user.email
-    image_file = url_for('static',filename='profile_pics/{}'.format(current_user.image_file))
-    return render_template('edit_profile.html',title='Your account',image_file=image_file,form=form)
-    #TODO: need to restyle it and remove/account/edit
-
 @login_required
 @app.route("/post/new", methods=['GET', 'POST'])
 def new_post():
