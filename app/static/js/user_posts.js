@@ -1,7 +1,8 @@
 $(document).ready(function () {
     $("#showEdit").click(function () {
-        $("#theform").slideToggle("slow");
-        console.log("skfji")
+        $("#theform").slideDown("slow");
+    });
+    $("#cancel").click(function () {
+        $("#theform").slideUp("slow");
     });
 });
-console.log("wda")
