@@ -157,6 +157,19 @@ def user_posts(username):
     page = request.args.get('page', 1, type=int)
     user = User.query.filter_by(username=username).first_or_404()
     posts = Post.query.filter_by(author=user).order_by(Post.date_posted.desc()).paginate(page=page, per_page=10)
+    form = UpdateProfileForm()
+    if form.validate_on_submit():
+        if form.profile_pic.data:
+            picture_file = save_picture(form.profile_pic.data)
+            current_user.image_file = picture_file
+        current_user.username = form.username.data
+        current_user.email = form.email.data
+        db.session.commit()
+        flash('Your account has been successfully updated !','success')
+        return redirect(url_for('user_posts', username=current_user.username))
+    elif request.method == 'GET':
+        form.username.data = current_user.username
+        form.email.data = current_user.email
     return render_template('user_posts.html', posts=posts, user=user)
 
 
