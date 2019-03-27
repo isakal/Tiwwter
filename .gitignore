@@ -114,4 +114,4 @@ test/
 keys.json
 
 #empty database
-app/*.db
+app/site.db
