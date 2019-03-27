@@ -36,9 +36,9 @@
         <div class="form-group">
             {{ form.submit(class="btn btn-outline-info") }}
             {% if editing %}
-            <a href="{{ url_for('post', post_id=post.id) }}" id="edit" class=" btn btn-outline-secondary" role="button" style="margin-left: 10px;">Cancel</a>
+            <a href="{{ url_for('posts.post', post_id=post.id) }}" id="edit" class=" btn btn-outline-secondary" role="button" style="margin-left: 10px;">Cancel</a>
             {% else %}
-            <a href="{{ url_for('home') }}" id="edit" class=" btn btn-outline-secondary" role="button" style="margin-left: 10px;">Cancel</a>
+            <a href="{{ url_for('main.home') }}" id="edit" class=" btn btn-outline-secondary" role="button" style="margin-left: 10px;">Cancel</a>
             {% endif %}
         </div>
     </form>

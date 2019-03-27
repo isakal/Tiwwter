@@ -16,33 +16,45 @@ def getJSON(filename):
         sys.exit(1)
 
 
-keys = getJSON("keys.json")
-appSecretKey = keys.get("app_secret_key")
-recaptcha_keys = keys['recaptcha_keys']
-recaptchaKeyPublic = recaptcha_keys['public']
-recaptchaKeyPrivate = recaptcha_keys['private']
-MAIL_EMAIL = keys.get("mail_email")
-MAIL_PASSWORD = keys.get("mail_password")
-
 app = Flask(__name__)
-app.config['SECRET_KEY'] = appSecretKey
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
-app.config['RECAPTCHA_PUBLIC_KEY'] = recaptchaKeyPublic
-app.config['RECAPTCHA_PRIVATE_KEY'] = recaptchaKeyPrivate
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = MAIL_EMAIL
-app.config['MAIL_PASSWORD'] = MAIL_PASSWORD
+app.config.from_json('../keys.json')
 
-db = SQLAlchemy(app)
+keys = getJSON("keys.json")
+MAIL_EMAIL = keys.get("MAIL_USERNAME")
 
-bcrypt = Bcrypt(app)
+db = SQLAlchemy()
 
-login_manager = LoginManager(app)
-login_manager.login_view = 'login'
+bcrypt = Bcrypt()
+
+login_manager = LoginManager()
+login_manager.login_view = 'users.login'
 login_manager.login_message_category = 'info'
 
-mail = Mail(app)
+mail = Mail()
 
-from app import routes
+from app.users.routes import users
+from app.posts.routes import posts
+from app.main.routes import main
+
+app.register_blueprint(users)
+app.register_blueprint(posts)
+app.register_blueprint(main)
+
+
+def create_app(json_path="../keys.json"):
+    app = Flask(__name__)
+    app.config.from_json(json_path)
+
+    db.init_app(app)
+    bcrypt.init_app(app)
+    login_manager.init_app(app)
+    mail.init_app(app)
+
+    from app.users.routes import users
+    from app.posts.routes import posts
+    from app.main.routes import main
+    app.register_blueprint(users)
+    app.register_blueprint(posts)
+    app.register_blueprint(main)
+
+    return app
