@@ -78,3 +78,11 @@ a.article-title:hover {
 .account-heading {
     font-size: 2.5rem;
 }
+
+.minwidth {
+    min-width: 0;
+}
+
+.wrapword {
+    overflow-wrap: break-word;
+}
