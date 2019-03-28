@@ -1,0 +1,11 @@
+{
+    "SECRET_KEY":"47a2d772b1ae98f3ad199dd2e1793757",
+    "SQLALCHEMY_DATABASE_URI":"sqlite:///site.db",
+    "RECAPTCHA_PUBLIC_KEY":"6LfJTpIUAAAAAB8eRPVrytaqFACnMM87AUDqU0MG",
+    "RECAPTCHA_PRIVATE_KEY":"6LfJTpIUAAAAABndeU9uz5aHtFBoZkRNK_jySbNP",
+    "MAIL_SERVER":"smtp.gmail.com",
+    "MAIL_PORT":587,
+    "MAIL_USE_TLS":"True",
+    "MAIL_USERNAME":"Tiwwter4win@gmail.com",
+    "MAIL_PASSWORD":"tiwwter123"
+}

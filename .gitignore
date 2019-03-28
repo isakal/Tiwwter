@@ -109,9 +109,3 @@ py3env/
 *.code-workspace
 .vscode/
 test/
-
-#app and reCaptcha keys
-keys.json
-
-#empty database
-app/site.db
