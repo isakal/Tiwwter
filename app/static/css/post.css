@@ -21,12 +21,12 @@
     transition: 0.2s;
 }
 .optns {
-    display: inline-block;
+    display: none;
     position: absolute;
     width: 100px;
-    height: 0px;
-    top: 63px;
-    right: 45px;
+    height: 60px;
+    margin-top: 26px;
+    margin-left: 506px;
 }
 .dot {
     display: inline-block;
@@ -43,7 +43,7 @@
 }
 .custombtn {
     width: 100px;
-    height: 0px;
+    height: 30px;
     transition: 0.2s;
     display: block;
     border-radius: 0px;
