@@ -1,5 +1,5 @@
 aniso8601==6.0.0
-apturl==0.5.2
+apturl
 asn1crypto==0.24.0
 astroid==2.2.5
 bcrypt==3.1.6
