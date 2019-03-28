@@ -3,7 +3,7 @@
 <link rel="stylesheet" type="text/css" href="{{ url_for("static", filename="css/post.css") }}">
 <article class="media content-section">
     <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/'+ post.author.image_file) }}">
-    <div class="media-body">
+    <div class="media-body minwidth">
         <div>
             <a class="mr-2" href="{{ url_for('users.user_posts', username=post.author.username) }}">{{ post.author.username }}</a>
             <small class="text-muted">{{ post.date_posted.strftime('%d-%m-%Y') }}</small>
@@ -21,7 +21,7 @@
                 {% endif %}
             </div>
             <h2 class="article-title">{{ post.title }}</h2>
-            <p class="article-content">{{ post.content }}</p>
+            <p class="article-content wrapword">{{ post.content }}</p>
         </div>
 </article>
 <!-- Modal -->
