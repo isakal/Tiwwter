@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
-<link rel="stylesheet" type="text/css" href="{{ url_for("static", filename="css/post.css") }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/post.css') }}">
 <article class="media content-section">
     <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/'+ post.author.image_file) }}">
     <div class="media-body minwidth">
@@ -10,7 +10,7 @@
             {% if post.author == current_user %}
             <div id="selectDiv" class="borderline">
                 <div id="dotdiv" class="show">
-                    <span class="dot show "></span>
+                    <span class="dot show"></span>
                     <span class="dot show"></span>
                     <span class="dot show"></span>
                 </div>
@@ -43,5 +43,5 @@
         </div>
     </div>
 </div>
-<script src="{{ url_for("static", filename="js/post.js") }}"></script>
+<script src="{{ url_for('static', filename='js/post.js') }}"></script>
 {% endblock content %}
