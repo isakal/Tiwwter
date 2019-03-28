@@ -17,7 +17,7 @@ def getJSON(filename):
 
 
 app = Flask(__name__)
-app.config.from_json('keys.json')
+app.config.from_json('../keys.json')
 
 keys = getJSON("keys.json")
 MAIL_EMAIL = keys.get("MAIL_USERNAME")
