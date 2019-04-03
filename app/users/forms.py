@@ -42,7 +42,7 @@ class UpdateProfileForm(FlaskForm):
                         validators=[DataRequired(), Email()])
     submit = SubmitField('Update')
     recaptcha= RecaptchaField()
-    profile_pic = FileField('Update profile picture',validators=[FileAllowed(['jpg','png'])])
+    profile_pic = FileField('Update profile picture',validators=[FileAllowed(['jpg', 'png', 'jpeg'])])
 
     def validate_username(self,username):
         if username.data != current_user.username:
