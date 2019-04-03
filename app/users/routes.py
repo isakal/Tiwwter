@@ -61,7 +61,7 @@ def user_posts(username):
         db.session.commit()
         flash('Your account has been successfully updated !','success')
         return redirect(url_for('users.user_posts', username=current_user.username))
-    elif request.method == 'GET':
+    elif request.method == 'GET' and current_user.is_authenticated:
         form.username.data = current_user.username
         form.email.data = current_user.email
     return render_template('user_posts.html', posts=posts, user=user, form=form)
