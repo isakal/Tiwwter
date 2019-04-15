@@ -58,9 +58,6 @@
 
             </div>
         </fieldset>
-        <div class="form-group">
-            {{ form.recaptcha }}
-        </div>
         <div class="form-group" style="position: relative;right: 0;bottom: 0;">
             {{ form.submit(class="btn btn-outline-info") }}
             <a source="{{ url_for('users.user_posts', username=current_user.username) }}" id="cancel" class=" btn btn-outline-secondary" role="button" style="margin-left: 10px;">Cancel</a>
