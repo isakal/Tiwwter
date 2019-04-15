@@ -35,11 +35,12 @@ mail = Mail()
 from app.users.routes import users
 from app.posts.routes import posts
 from app.main.routes import main
+from app.errors.handlers import errors
 
 app.register_blueprint(users)
 app.register_blueprint(posts)
 app.register_blueprint(main)
-
+app.register_blueprint(errors)
 
 def create_app(json_path="../keys.json"):
     app = Flask(__name__)
@@ -53,8 +54,11 @@ def create_app(json_path="../keys.json"):
     from app.users.routes import users
     from app.posts.routes import posts
     from app.main.routes import main
+    from app.errors.handlers import errors
+
     app.register_blueprint(users)
     app.register_blueprint(posts)
     app.register_blueprint(main)
+    app.register_blueprint(errors)
 
     return app
