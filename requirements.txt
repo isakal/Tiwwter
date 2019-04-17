@@ -1,5 +1,5 @@
 flask
-safrs
+flask-restful
 pillow
 WTForms
 flask_wtf
