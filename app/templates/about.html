@@ -1,7 +1,17 @@
 {% extends "layout.html" %}
 {% block content %}
-<h1>About Tiwwter</h1>
-<p>
-    This page is about learning Flask with my friend.
-</p>
+<div class="content-section">
+    <div class="media">
+        <img class="account-img" src="{{ url_for('static', filename='assets/icon.png') }}">
+        <div class="media-body">
+            <h1 style="margin-top: 30px">Tiwwter</h1>
+        </div>
+    </div>
+    <h1 class="mb-3">About</h1>
+    <div class="media content-section">
+        <p>Tiwwter is a small project by Saki and Spinzed which was started in attempt to learn
+            more about web development, how does the web structure work, how parts of it interact 
+            with each other and etc.</p>
+    </div>
+</div>
 {% endblock content %}
