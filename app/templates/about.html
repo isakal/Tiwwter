@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/about.css') }}">
 <div class="content-section">
     <div class="media">
         <img class="account-img" src="{{ url_for('static', filename='assets/icon.png') }}">
@@ -8,10 +9,12 @@
         </div>
     </div>
     <h1 class="mb-3">About</h1>
-    <div class="media content-section">
-        <p>Tiwwter is a small project by Saki and Spinzed which was started in attempt to learn
-            more about web development, how does the web structure work, how parts of it interact 
-            with each other and etc.</p>
+    <div class="content-section">
+        <div><p>Tiwwter is a small project by Saki and Spinzed which was started in attempt to learn
+            more about web development, how does the web structure work, how parts of it interact
+            with each other and etc.</p></div>
+        <div><p><a href="https://github.com/Spinzed">Saki's GitHub</a></p>
+        <p><a href="https://github.com/isakal">Spinzed's GitHub</a></p></div>
     </div>
 </div>
 {% endblock content %}
