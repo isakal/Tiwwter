@@ -1,0 +1,10 @@
+p > a {
+    color: #6999f3;
+    font-weight: 500;
+    transition: 150ms;
+}
+p > a:hover {
+    text-decoration: none;
+    color: #3656c2;
+    transition: 200ms;
+}
