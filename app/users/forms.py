@@ -8,12 +8,12 @@ from app.models import User
 
 class RegistrationForm(FlaskForm):
     username = StringField('Username',
-                           validators=[DataRequired(), Length(min=2, max=20)])
+                validators=[DataRequired(), Length(min=2, max=20)])
     email = StringField('Email',
-                        validators=[DataRequired(), Email()])
+                validators=[DataRequired(), Email()])
     password = PasswordField('Password', validators=[DataRequired()])
     confirm_password = PasswordField('Confirm Password',
-                                     validators=[DataRequired(), EqualTo('password')])
+                validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Sign Up')
     recaptcha= RecaptchaField()
 
@@ -29,7 +29,7 @@ class RegistrationForm(FlaskForm):
 
 class LoginForm(FlaskForm):
     email = StringField('Email',
-                        validators=[DataRequired(), Email()])
+                validators=[DataRequired(), Email()])
     password = PasswordField('Password', validators=[DataRequired()])
     remember = BooleanField('Remember Me')
     submit = SubmitField('Login')
@@ -37,11 +37,10 @@ class LoginForm(FlaskForm):
 
 class UpdateProfileForm(FlaskForm):
     username = StringField('Username',
-                           validators=[DataRequired(), Length(min=2, max=20)])
+                validators=[DataRequired(), Length(min=2, max=20)])
     email = StringField('Email',
-                        validators=[DataRequired(), Email()])
+                validators=[DataRequired(), Email()])
     submit = SubmitField('Update')
-    recaptcha= RecaptchaField()
     profile_pic = FileField('Update profile picture',validators=[FileAllowed(['jpg', 'png', 'jpeg'])])
 
     def validate_username(self,username):
@@ -59,7 +58,7 @@ class UpdateProfileForm(FlaskForm):
 
 class RequestResetForm(FlaskForm):
     email = StringField('Email',
-    validators=[DataRequired(), Email()])
+                validators=[DataRequired(), Email()])
     submit = SubmitField('Request Password Reset')
 
     def validate_email(self,email):
@@ -71,5 +70,5 @@ class RequestResetForm(FlaskForm):
 class ResetPasswordForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired()])
     confirm_password = PasswordField('Confirm Password',
-        validators=[DataRequired(), EqualTo('password')])
+                validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Reset Password')
