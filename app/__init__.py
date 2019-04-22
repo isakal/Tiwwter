@@ -1,4 +1,5 @@
 import sys
+import os
 import json
 from flask import Flask
 from flask_mail import Mail
@@ -6,21 +7,21 @@ from flask_bcrypt import Bcrypt
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
-
 def getJSON(filename):
     try:
         with open(filename,'r') as fp:
             return json.load(fp)
     except FileNotFoundError:
-        print("Couldn't find key, exiting the program...")
+        print("Couldn't find key, exiting the program... \n")
         sys.exit(1)
 
 
 app = Flask(__name__)
 app.config.from_json('../keys.json')
+app.config['MAIL_USERNAME'] = os.environ['TIWWTER_MAIL']
+app.config['MAIL_PASSWORD'] = os.environ['TIWWTER_PASSWORD']
 
 keys = getJSON("keys.json")
-MAIL_EMAIL = keys.get("MAIL_USERNAME")
 
 db = SQLAlchemy()
 

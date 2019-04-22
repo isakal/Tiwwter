@@ -5,7 +5,5 @@
     "RECAPTCHA_PRIVATE_KEY":"6LfJTpIUAAAAABndeU9uz5aHtFBoZkRNK_jySbNP",
     "MAIL_SERVER":"smtp.gmail.com",
     "MAIL_PORT":587,
-    "MAIL_USE_TLS":"True",
-    "MAIL_USERNAME":"Tiwwter4win@gmail.com",
-    "MAIL_PASSWORD":"tiwwter123"
+    "MAIL_USE_TLS":"True"
 }
