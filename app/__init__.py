@@ -46,6 +46,8 @@ app.register_blueprint(errors)
 def create_app(json_path="../keys.json"):
     app = Flask(__name__)
     app.config.from_json(json_path)
+    app.config['MAIL_USERNAME'] = os.environ['TIWWTER_MAIL']
+    app.config['MAIL_PASSWORD'] = os.environ['TIWWTER_PASSWORD']
 
     db.init_app(app)
     bcrypt.init_app(app)
