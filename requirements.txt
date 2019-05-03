@@ -8,3 +8,4 @@ flask_login
 flask_bcrypt
 flask_sqlalchemy
 gunicorn
+psycopg2
