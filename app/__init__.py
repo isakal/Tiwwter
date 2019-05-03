@@ -20,6 +20,7 @@ app = Flask(__name__)
 app.config.from_json('../keys.json')
 app.config['MAIL_USERNAME'] = os.environ['TIWWTER_MAIL']
 app.config['MAIL_PASSWORD'] = os.environ['TIWWTER_PASSWORD']
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['TIWWTER_DB_URI']
 
 keys = getJSON("keys.json")
 
@@ -48,6 +49,7 @@ def create_app(json_path="../keys.json"):
     app.config.from_json(json_path)
     app.config['MAIL_USERNAME'] = os.environ['TIWWTER_MAIL']
     app.config['MAIL_PASSWORD'] = os.environ['TIWWTER_PASSWORD']
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['TIWWTER_DB_URI']
 
     db.init_app(app)
     bcrypt.init_app(app)
