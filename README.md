@@ -45,32 +45,36 @@ This web app is package-like structured. That means that every single package/se
 |-- keys.json
 |-- manage.py
 |-- requirements.txt
-`-- run.py
-
 
 ```
-<br>
+
+
 To make your own service/package, follow this:
+
+
 ```python
 # ~/app/__init__.py
 from flask import Flask
 
 app = Flask(__name__)
 service = YourService(app) # app is the flask object that is running
-service.init_app() # initializing the app once the app starts
+service.init_app() # initializing the package/service once the app starts
 
 #...
 
-def create_app(): # this function is being ran in run.py which the starts the server
+def create_app(): # this function is being ran in run.py which starts the server
 
     app = Flask(__name__)
     service.init_app()
     return app
 ```
+
+
 If you are creating new blueprint, please follow this :
 
+
 ```python
-#~/app/your_blueprint/routes
+#~/app/your_blueprint/routes.py
 from flask Blueprint
 
 bp = Blueprint('bp',__name__) # see flask docs to search for other arguments of the Blueprint object
@@ -80,6 +84,7 @@ def some_func():
 
 
 ```
+
 
 ```python
 # ~/app/__init__.py
