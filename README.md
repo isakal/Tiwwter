@@ -139,3 +139,6 @@ Feel free to open issues, we are glad to hear feedback.
 ## Credits
 Good job if you read till here! We would like to give credits to some very important people. Such as Corey Schafer and my CS teacher. Corey has a great youtube series explaining how flask works which you can visit [here](https://www.youtube.com/playlist?list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH).<br>
 Pallets Projects are the creators of Flask and modules that Flask is based on. I recommend visiting their discord server [here](https://discord.gg/7g9bd9g).
+
+## LICENSE
+[MIT](https://choosealicense.com/licenses/mit/) © Saki
