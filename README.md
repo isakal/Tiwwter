@@ -11,7 +11,7 @@ We are very close to intergrating Travis CI so expect build status soon.
 ## Screenshots
 | Feeds | Profile |
 |:-:|:-:|
-| ![](github/main_page.png "") | ![](github/profile_page.png "") |
+| ![](github/main_page.png "") | ![](github/account_page.png "") |
 
 | About | Register |
 |:-:|:-:|
