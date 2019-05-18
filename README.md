@@ -6,7 +6,9 @@
  This project started as a way to learn Flask web framework, but evolved in something bigger. We are still running into some issues, so feel free to add them to the issues list.
 
 ## Build Status
-We are very close to intergrating Travis CI so expect build status soon.
+![Travis (.com) branch](https://img.shields.io/travis/com/isakal/Tiwwter/master.svg)
+Travis CI is implemented and fully working.
+
 
 ## Screenshots
 | Feeds | Profile |
