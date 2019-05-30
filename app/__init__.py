@@ -34,7 +34,7 @@ app.register_blueprint(posts)
 app.register_blueprint(main)
 app.register_blueprint(errors)
 
-def create_app(json_path="../keys.json"):
+def create_app():
 	app = Flask(__name__)
 	app.config.from_object(DevelopmentConfig)
 
