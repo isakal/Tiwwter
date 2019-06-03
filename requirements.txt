@@ -9,3 +9,4 @@ flask_bcrypt
 flask_sqlalchemy
 gunicorn
 psycopg2
+flask_debugtoolbar
