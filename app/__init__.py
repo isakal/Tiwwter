@@ -36,7 +36,7 @@ app.register_blueprint(errors)
 
 def create_app():
 	app = Flask(__name__)
-	app.config.from_object(ProductionConfig if os.environ['TIWWTER_PROD'] == True else DevelopmentConfig)
+	app.config.from_object(ProductionConfig if os.environ['TIWWTER_PROD'] == 'True' else DevelopmentConfig)
 
 	db.init_app(app)
 	bcrypt.init_app(app)
