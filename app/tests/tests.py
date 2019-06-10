@@ -11,8 +11,8 @@ class BasicTests(unittest.TestCase):
     def register(self, username, email, pwd):
         return self.client.post(
             'register',
-            data = dict(username=username, email=email, password=pwd, 
-                confirm_passwrod=pwd), 
+            data = dict(username=username, email=email, password=pwd,
+                confirm_passwrod=pwd),
             follow_redirects=True
         )
 
@@ -49,6 +49,11 @@ class BasicTests(unittest.TestCase):
         assert response.status_code == 200
 
 
+    def test_about_page(self):
+        response = self.client.get('/about', follow_redirects=True)
+        assert response.status_code == 200
+
+
     def test_register(self): #  testing registering a user in a db
         response = self.register('test_user', 'test@test.com', 'password123')
         assert response.status_code == 200
@@ -67,7 +72,7 @@ class BasicTests(unittest.TestCase):
         self.logout()
         response = self.client.get("/")
         assert response.status_code == 200
-        assert b'Tiwwter' in response.data
+        assert b'Login' in response.data
 
 
 
