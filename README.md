@@ -3,11 +3,16 @@
 <center> A little CRUD post-based website built to replace dying Facebook <center>
 
 ## Motivation
- This project started as a way to learn Flask web framework, but evolved in something bigger. We are still running into some issues, so feel free to add them to the issues list.
+ This project started as a way to learn Flask web framework, but evolved in something bigger. We are still running into some issues, so feel free to add them to the issues list.<br>
+ Website can be visited here: [Tiwwter](https://tiwwter.herokuapp.com)
 
 ## Build Status
-![Travis (.com) branch](https://img.shields.io/travis/com/isakal/Tiwwter/master.svg)
-Travis CI is implemented and fully working.
+[![GitHub](https://img.shields.io/github/license/isakal/tiwwter.svg)](https://github.com/isakal/Tiwwter/blob/master/LICENSE)
+[![Travis (.com) branch](https://img.shields.io/travis/com/isakal/Tiwwter/master.svg)](https://travis-ci.org/isakal/Tiwwter)
+[![Website](https://img.shields.io/website/https/tiwwter.herokuapp.com.svg?down_color=red&down_message=down&up_message=up)](https://tiwwter.herokuapp.com)
+[![Codecov](https://img.shields.io/codecov/c/gh/isakal/tiwwter.svg)](https://codecov.io/gh/isakal/Tiwwter)
+[![GitHub issues](https://img.shields.io/github/issues/isakal/tiwwter.svg)](https://github.com/isakal/Tiwwter/issues)
+
 
 
 ## Screenshots
@@ -111,8 +116,10 @@ def create_app(): # this function is being ran in run.py which the starts the se
     return app
 ```
 ## Tests
-Tests are still done manually. **:)**<br>
-That will be changed when Travis CI gets implemented.
+To run tests, run following command in terminal of choice:
+```
+python3 -m unittest app/tests/tests.py -v
+```
 
 ## How To Use?
 To run your own instance of Tiwwter locally, you will have to set some things up first.<br>
@@ -144,7 +151,7 @@ We use a mixture of pylint and flake8 for linting. To contribute, fork this repo
 Feel free to open issues, we are glad to hear feedback.
 
 ## Credits
-Good job if you read till here! We would like to give credits to some very important people. Such as Corey Schafer and my CS teacher. Corey has a great youtube series explaining how flask works which you can visit [here](https://www.youtube.com/playlist?list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH).<br>
+We would like to give credits to some very important people. Such as Corey Schafer and my CS teacher. Corey has a great youtube series explaining how flask works which you can visit [here](https://www.youtube.com/playlist?list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH).<br>
 Pallets Projects are the creators of Flask and modules that Flask is based on. I recommend visiting their discord server [here](https://discord.gg/7g9bd9g).
 
 ## LICENSE
