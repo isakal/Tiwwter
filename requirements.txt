@@ -11,3 +11,4 @@ gunicorn
 psycopg2
 flask_debugtoolbar
 codecov
+pyopenssl
