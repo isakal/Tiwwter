@@ -17,4 +17,3 @@ def access_denied(error):
 @errors.app_errorhandler(500)
 def internal_error(error):
     return render_template('error_page.html', err_title='Internal error occured.', err_desc='Please try again.'), 500
-
