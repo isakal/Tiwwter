@@ -26,7 +26,7 @@ class BasicTests(unittest.TestCase):
 
 
     def logout(self):
-        return self.client.get('get',
+        return self.client.get('/logout',
              follow_redirects=True
         )
 
@@ -44,6 +44,7 @@ class BasicTests(unittest.TestCase):
             db.drop_all()
 
 
+        """Main testing"""
     def test_main_page(self): # testing a simple get request to a "/" route
         response = self.client.get('/', follow_redirects=True)
         assert response.status_code == 200
@@ -54,6 +55,7 @@ class BasicTests(unittest.TestCase):
         assert response.status_code == 200
 
 
+        """User testing"""
     def test_register(self): #  testing registering a user in a db
         response = self.register('test_user', 'test@test.com', 'password123')
         assert response.status_code == 200
@@ -70,10 +72,16 @@ class BasicTests(unittest.TestCase):
     def test_logout(self): # testing logging out and redirecting to "/"
         self.login('test@test.com','password123')
         self.logout()
-        response = self.client.get("/")
+        response = self.client.get('/')
         assert response.status_code == 200
         assert b'Login' in response.data
 
+
+        """Error handlers testing"""
+    def test_404(self):
+        response = self.client.get('/test123123',follow_redirects=True)
+        assert response.status_code == 404
+        assert b'Page you were looking for is not found.' in response.data
 
 
 
