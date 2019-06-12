@@ -8,7 +8,10 @@ install:
     - pip install -r requirements.txt
 
 script:
-    - coverage run --source . -m unittest app/tests/tests.py -v
+    - coverage run -m unittest app/tests/tests_users.py -v
+    - coverage run -a -m unittest app/tests/tests_users.py -v
+    - coverage run -a -m unittest app/tests/tests_errors.py -v
+    - coverage run -a -m unittest app/tests/tests_posts.py -v
     - codecov
 
 #Send a payload to discord webhook url --> $WEBHOOK_URL

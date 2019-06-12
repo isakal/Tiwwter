@@ -1,0 +1,9 @@
+[run]
+omit=
+	*/venv/*
+	/app/models.py
+	/app/tests/*
+	/app/config.py
+	/manage.py
+	/run.py
+	/empty_create_db.py
